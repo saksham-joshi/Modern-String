@@ -630,7 +630,7 @@ inline ULongLong rindexString(MstrPtr __obj  , char __ch)
 // sorts the given string in ascending order
 inline void sortString(MstrPtr __obj)
 {
-
+    qsort_s(__obj->_str , __obj->_len , sizeof(char) , ModernStringUtil_charCmp, NULL);
 }
 
 /*
