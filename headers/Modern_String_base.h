@@ -30,9 +30,16 @@
 #define MODERN_STRING_MAX_STRING_LEN SIZE_MAX
 #define MODERN_STRING_NULL_TERMINATOR '\0'
 
-typedef _Bool ModernStringBool;
-#define MODERN_STRING_TRUE (ModernStringBool) 1
-#define MODERN_STRING_FALSE (ModernStringBool) 0
+#if __STDC_VERSION__ >= 202311L
+    typedef bool ModernStringBool;
+    #define MODERN_STRING_TRUE true
+    #define MODERN_STRING_FALSE false
+#else 
+    typedef _Bool ModernStringBool;
+    #define MODERN_STRING_TRUE  ((ModernStringBool)1)
+    #define MODERN_STRING_FALSE ((ModernStringBool)0)
+#endif
+
 
 typedef unsigned long long ULongLong;
 
