@@ -43,7 +43,7 @@ inline ModernStringBool isUpperCaseString(MstrPtr);
 
 inline ULongLong lenString(MstrPtr);
 inline ModernString makeString(const char*);
-inline ModernString makeEmptyString();
+inline ModernString makeEmptyString(void);
 inline ModernString makeReservedString(unsigned long);
 
 inline char popBackString(MstrPtr);
